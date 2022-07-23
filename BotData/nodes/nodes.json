@@ -1,0 +1,933 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "9d626460-f171-4c36-8ea0-79c06eebaa13",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "5bd6fd33-37fc-4340-8dfe-e1bea84fbee6"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 80,
+      "y": 114
+    },
+    {
+      "type": "command",
+      "name": "ping",
+      "guid": "a917b2e0-7864-43ce-9925-1ea348b57f40",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "26979654-bda2-410f-a573-83f6d90b659b"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 82,
+      "y": 205
+    },
+    {
+      "type": "command",
+      "name": "kick",
+      "guid": "6c241790-92a0-4af2-ad06-070788231718",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "5537582b-db5e-4d72-9002-e8463924df23"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 80,
+      "y": 296
+    },
+    {
+      "type": "command",
+      "name": "warn",
+      "guid": "cb37ba25-73cb-45dd-bd88-caafba357109",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "a7d00990-b0d2-42fa-beeb-eaf0bb03d0bc"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 86,
+      "y": 1004
+    },
+    {
+      "type": "command",
+      "name": "HappyBirthday",
+      "guid": "df289a15-37cf-4efc-9b4d-cf7730197943",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "bedd6fe4-999a-42dd-9a40-daa16225eab0"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 84,
+      "y": 478
+    },
+    {
+      "type": "command",
+      "name": "shutdown",
+      "guid": "b5d3d080-ad18-4c5a-9787-020111edea36",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "e798b108-8260-4490-bb29-89968acd8f00"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 83,
+      "y": 571
+    },
+    {
+      "type": "command",
+      "name": "startup",
+      "guid": "2e514711-1c39-4b3d-a162-0e98f6221bce",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "f03e0c3b-fafb-40ed-be1e-1f24373a0b4b"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 85,
+      "y": 661
+    },
+    {
+      "type": "response",
+      "name": "response",
+      "guid": "5bd6fd33-37fc-4340-8dfe-e1bea84fbee6",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "1cb9810d-0254-44ad-8e27-29c78fdbb01d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9d626460-f171-4c36-8ea0-79c06eebaa13"
+        }
+      ],
+      "x": 300,
+      "y": 111,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "`PRC Support, please state your issue down below!`",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Failed Response",
+      "guid": "6d184763-4577-4cfc-8224-9e128ab2bec5",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1cb9810d-0254-44ad-8e27-29c78fdbb01d"
+        }
+      ],
+      "x": 656,
+      "y": 122,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Unfortunately your request for me was not for a moderation. Please avoid from spamming.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Wait",
+      "guid": "1cb9810d-0254-44ad-8e27-29c78fdbb01d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "6d184763-4577-4cfc-8224-9e128ab2bec5"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5bd6fd33-37fc-4340-8dfe-e1bea84fbee6"
+        }
+      ],
+      "x": 474,
+      "y": 112,
+      "rtype": "Control",
+      "rsubtype": "Wait",
+      "formdata": [
+        "7",
+        "seconds"
+      ],
+      "formnames": [
+        "waitduration",
+        "unit"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "response_1",
+      "guid": "26979654-bda2-410f-a573-83f6d90b659b",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a917b2e0-7864-43ce-9925-1ea348b57f40"
+        }
+      ],
+      "x": 299,
+      "y": 230,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Pong! `130ms`",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "ID",
+      "guid": "95814412-99bd-4d5e-bca2-575d4da5d49e",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "ID",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "f4c33b0a-ff38-4070-80c6-1e5361de1ca3"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5537582b-db5e-4d72-9002-e8463924df23"
+        }
+      ],
+      "x": 627,
+      "y": 353,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "ID",
+        "Number",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "reason",
+      "guid": "f4c33b0a-ff38-4070-80c6-1e5361de1ca3",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "Reason",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "357a9751-ac46-4200-adb7-51c4c2471480"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "95814412-99bd-4d5e-bca2-575d4da5d49e"
+        }
+      ],
+      "x": 834,
+      "y": 349,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "Reason",
+        "Text",
+        "temp",
+        "2+"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Kick",
+      "guid": "357a9751-ac46-4200-adb7-51c4c2471480",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "e62a6d0a-a305-43c9-ae7d-fd1618e6dc7e"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f4c33b0a-ff38-4070-80c6-1e5361de1ca3"
+        }
+      ],
+      "x": 1045,
+      "y": 353,
+      "rtype": "User Action",
+      "rsubtype": "Kick User",
+      "formdata": [
+        "${tempVars.ID}",
+        "${tempVars.Reason}"
+      ],
+      "formnames": [
+        "user",
+        "reason"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "response_2",
+      "guid": "bedd6fe4-999a-42dd-9a40-daa16225eab0",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "df289a15-37cf-4efc-9b4d-cf7730197943"
+        }
+      ],
+      "x": 664,
+      "y": 530,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Happy Birthday <@${dbsVars.CommandAuthor.id}>",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "response_2_1",
+      "guid": "e798b108-8260-4490-bb29-89968acd8f00",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d9041b24-84cf-4761-89d9-e80b72614f89"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b5d3d080-ad18-4c5a-9787-020111edea36"
+        }
+      ],
+      "x": 302,
+      "y": 593,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "The bot is currently down due to maintenance. I will return at a later time!",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Status",
+      "guid": "d9041b24-84cf-4761-89d9-e80b72614f89",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e798b108-8260-4490-bb29-89968acd8f00"
+        }
+      ],
+      "x": 471,
+      "y": 597,
+      "rtype": "Bot Action",
+      "rsubtype": "Set Bot Status",
+      "formdata": [
+        "invisible"
+      ],
+      "formnames": [
+        "presencestatus"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "response_2_1_1",
+      "guid": "f03e0c3b-fafb-40ed-be1e-1f24373a0b4b",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "53cf832a-8f46-4ea8-abcb-a88bbc57973d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2e514711-1c39-4b3d-a162-0e98f6221bce"
+        }
+      ],
+      "x": 301,
+      "y": 720,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "`The bot is currently starting up. I shall return!`",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "whoislawmaster",
+      "guid": "a71a6fe1-46d9-45fd-9b8a-f43f8a8e208d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "4af5c44a-4bab-4c6a-ba59-3e3513fed9c2"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 88,
+      "y": 862
+    },
+    {
+      "type": "response",
+      "name": "response_2_1_1_1",
+      "guid": "4af5c44a-4bab-4c6a-ba59-3e3513fed9c2",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a71a6fe1-46d9-45fd-9b8a-f43f8a8e208d"
+        }
+      ],
+      "x": 304,
+      "y": 866,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "`Law_Master is the godfather of the children of Israel`",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Status_1",
+      "guid": "53cf832a-8f46-4ea8-abcb-a88bbc57973d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f03e0c3b-fafb-40ed-be1e-1f24373a0b4b"
+        }
+      ],
+      "x": 474,
+      "y": 732,
+      "rtype": "Bot Action",
+      "rsubtype": "Set Bot Status",
+      "formdata": [
+        "online"
+      ],
+      "formnames": [
+        "presencestatus"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "ID_1",
+      "guid": "a7d00990-b0d2-42fa-beeb-eaf0bb03d0bc",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "ID_1",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "6c16f64e-ab00-4ae0-9abb-411d77352215"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "cb37ba25-73cb-45dd-bd88-caafba357109"
+        }
+      ],
+      "x": 307,
+      "y": 1014,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "ID_1",
+        "Number",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "reason_1",
+      "guid": "6c16f64e-ab00-4ae0-9abb-411d77352215",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "Reason_1",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "4146833d-878f-4333-965d-a5de26d922f6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a7d00990-b0d2-42fa-beeb-eaf0bb03d0bc"
+        }
+      ],
+      "x": 490,
+      "y": 1017,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "Reason_1",
+        "Text",
+        "temp",
+        "2+"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Response",
+      "guid": "4146833d-878f-4333-965d-a5de26d922f6",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6c16f64e-ab00-4ae0-9abb-411d77352215"
+        }
+      ],
+      "x": 670,
+      "y": 1019,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${tempVars.ID_1} has been warned for **${tempVars.Reason_1}**",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Response_1",
+      "guid": "e62a6d0a-a305-43c9-ae7d-fd1618e6dc7e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "357a9751-ac46-4200-adb7-51c4c2471480"
+        }
+      ],
+      "x": 1234,
+      "y": 357,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${tempVars.ID} has been kicked for **${tempVars.Reason}**",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "response_2_2",
+      "guid": "f81c773b-5dab-43e4-91f5-eae10000556e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5537582b-db5e-4d72-9002-e8463924df23"
+        }
+      ],
+      "x": 833,
+      "y": 473,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "<@${dbsVars.CommandAuthor.id}>, you don't have permission to perform this command.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Permission",
+      "guid": "5537582b-db5e-4d72-9002-e8463924df23",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "95814412-99bd-4d5e-bca2-575d4da5d49e"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "f81c773b-5dab-43e4-91f5-eae10000556e"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6c241790-92a0-4af2-ad06-070788231718"
+        }
+      ],
+      "x": 350,
+      "y": 345,
+      "rtype": "User Action",
+      "rsubtype": "Check If User Has Role",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "1000281216903282718"
+      ],
+      "formnames": [
+        "user",
+        "role"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "purge",
+      "guid": "e7220fcc-ebe2-442d-94fa-2140e83022c0",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "50906f1c-3e95-4334-acc8-2110c0e51a87"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 83,
+      "y": 1167
+    },
+    {
+      "type": "response",
+      "name": "Delete",
+      "guid": "50906f1c-3e95-4334-acc8-2110c0e51a87",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "f1d92988-5e4e-4659-8577-41dc3669c8d6"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e7220fcc-ebe2-442d-94fa-2140e83022c0"
+        }
+      ],
+      "x": 291,
+      "y": 1173,
+      "rtype": "Channel Action",
+      "rsubtype": "Delete All Messages",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "100"
+      ],
+      "formnames": [
+        "channelname",
+        "msgcount"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Response_2",
+      "guid": "f1d92988-5e4e-4659-8577-41dc3669c8d6",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "50906f1c-3e95-4334-acc8-2110c0e51a87"
+        }
+      ],
+      "x": 507,
+      "y": 1172,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "`100` messages have been successfully deleted!",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    }
+  ]
+}
